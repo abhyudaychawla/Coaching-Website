@@ -1,65 +1,295 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PillarCard } from "@/components/ui/PillarCard";
+import { SituationGrid } from "@/components/ui/SituationGrid";
+import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { CTASection } from "@/components/ui/CTASection";
+import { CredentialsStrip } from "@/components/ui/CredentialsStrip";
+import { ConsultationForm } from "@/components/forms/ConsultationForm";
+import { pillars, situations, testimonials, siteConfig } from "@/lib/content";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Home | Change & Clarity Coaching",
+  description: "Anjali Raj helps you navigate life, relationships, and decisions with greater clarity and emotional steadiness. Book a free 15-minute exploratory conversation.",
+};
+
+export default function HomePage() {
+  const featuredTestimonials = testimonials.filter(t => t.id === "t1" || t.id === "t2" || t.id === "t3");
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* HERO SECTION */}
+      <section className="min-h-screen pt-24 pb-16 px-6 gradient-warm flex items-center relative overflow-hidden">
+        {/* Decorative background circle */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-beige/60 -translate-y-1/4 translate-x-1/4 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-champagne/40 translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Text */}
+            <div>
+              <p className="text-xs tracking-[0.3em] uppercase text-gold mb-6 font-sans">
+                Change & Clarity Coaching
+              </p>
+              <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-navy leading-[1.05] mb-6">
+                Reclaim your{" "}
+                <span className="italic text-gold">center</span>{" "}
+                in the season of change
+              </h1>
+              <div className="section-divider mb-6" />
+              <p className="text-base md:text-lg text-navy/65 leading-relaxed mb-10 max-w-lg">
+                {siteConfig.tagline}
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-navy text-warm-white rounded-full text-sm tracking-wide hover:bg-navy/85 transition-colors duration-200"
+                >
+                  Schedule a Conversation
+                  <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/coaching"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-navy/25 text-navy rounded-full text-sm tracking-wide hover:border-gold hover:text-gold transition-colors duration-200"
+                >
+                  Learn More
+                </Link>
+              </div>
+
+              {/* Quick trust signals */}
+              <div className="flex flex-wrap gap-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-1 h-6 bg-gold rounded-full" />
+                  <span className="text-xs text-navy/50 tracking-wide">ICF Accredited</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1 h-6 bg-gold rounded-full" />
+                  <span className="text-xs text-navy/50 tracking-wide">NeuroLeadership Institute</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1 h-6 bg-gold rounded-full" />
+                  <span className="text-xs text-navy/50 tracking-wide">Free 15-min Call</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Coach portrait area */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Decorative frame */}
+                <div className="absolute -inset-4 rounded-[3rem] border border-gold/20 pointer-events-none" />
+                <div className="absolute -top-2 -right-2 w-24 h-24 rounded-full border border-gold/30 pointer-events-none" />
+
+                {/* Portrait placeholder */}
+                <div className="w-72 h-96 md:w-80 md:h-[480px] rounded-[2.5rem] bg-beige overflow-hidden relative border border-gold-light/50 shadow-xl">
+                  {/* Placeholder — replace with actual <Image> from next/image */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+                    <div className="w-20 h-20 rounded-full bg-gold-light/60 mb-4 flex items-center justify-center">
+                      <span className="font-script text-3xl text-gold">AR</span>
+                    </div>
+                    <p className="text-xs text-navy/40 leading-relaxed">
+                      Place coach portrait here
+                      <br />
+                      Recommended: 640×800px
+                    </p>
+                  </div>
+                  {/* Gold accent bar at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+                </div>
+
+                {/* Floating card */}
+                <div className="absolute -bottom-4 -left-6 bg-warm-white rounded-2xl shadow-lg border border-gold-light/40 px-5 py-4">
+                  <p className="font-script text-2xl text-gold leading-none">{siteConfig.coachName}</p>
+                  <p className="text-[9px] tracking-[0.15em] text-navy/40 uppercase mt-1">Change & Clarity Coach</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* CREDENTIALS STRIP */}
+      <CredentialsStrip />
+
+      {/* INTRO SECTION */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <SectionHeading
+                eyebrow="About the Coach"
+                title="A space to think clearly and feel steady"
+                subtitle="Anjali Raj is a Certified Change & Clarity Coach working with individuals navigating life's most demanding moments — the ones that require both heart and clarity."
+              />
+              <p className="text-sm text-navy/60 leading-relaxed mt-6">
+                Her work is rooted in the belief that most answers already live within us — we simply need the right conditions to access them. Through coaching, she helps clients untangle complexity, quiet the noise, and move forward with intention rather than impulse.
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 mt-8 text-sm text-gold hover:text-navy transition-colors duration-200"
+              >
+                Read Anjali's story
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { number: "10+", label: "Years of Experience" },
+                { number: "200+", label: "Clients Supported" },
+                { number: "ICF", label: "Accredited Coach" },
+                { number: "100%", label: "Confidential" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="bg-beige rounded-2xl p-6 text-center border border-gold-light/30"
+                >
+                  <p className="font-heading text-4xl text-navy mb-1">{stat.number}</p>
+                  <p className="text-xs text-navy/50 tracking-wide leading-snug">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* HOW COACHING HELPS — 4 Pillars */}
+      <section className="py-20 px-6 bg-beige">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeading
+            eyebrow="How Coaching Works"
+            title="Four pillars of transformation"
+            subtitle="Every coaching engagement is unique, but these four threads run through all the work — helping you move from where you are to where you want to be."
+            centered
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {pillars.map((pillar) => (
+              <PillarCard
+                key={pillar.id}
+                title={pillar.title}
+                description={pillar.description}
+                icon={pillar.icon}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SITUATIONS PEOPLE BRING */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <SectionHeading
+                eyebrow="You're Not Alone"
+                title="Situations people often bring to coaching"
+                subtitle="There is no situation too complex or too 'ordinary' for coaching. If it matters to you, it belongs here."
+              />
+              <Link
+                href="/coaching"
+                className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-navy text-warm-white rounded-full text-sm tracking-wide hover:bg-navy/85 transition-colors"
+              >
+                Explore Coaching Services
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+            <SituationGrid items={situations} />
+          </div>
+        </div>
+      </section>
+
+      {/* FREE CALL BANNER */}
+      <section className="py-16 px-6 bg-champagne/50 border-y border-gold-light/50">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+              <p className="text-xs tracking-[0.2em] uppercase text-gold mb-2">No Commitment</p>
+              <h3 className="font-heading text-3xl md:text-4xl text-navy mb-2">
+                Free 15-minute exploratory conversation
+              </h3>
+              <p className="text-sm text-navy/60">
+                A relaxed, confidential space to explore how coaching might support you.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-navy text-warm-white rounded-full text-sm tracking-wide hover:bg-navy/85 transition-colors whitespace-nowrap"
+              >
+                Schedule a Call
+              </Link>
+              <a
+                href={siteConfig.socialLinks.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-navy/25 text-navy rounded-full text-sm tracking-wide hover:border-gold hover:text-gold transition-colors whitespace-nowrap"
+              >
+                <MessageCircle size={16} />
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS PREVIEW */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeading
+            eyebrow="Client Stories"
+            title="What clients say"
+            centered
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {featuredTestimonials.map((t) => (
+              <TestimonialCard
+                key={t.id}
+                quote={t.quote}
+                author={t.author}
+                location={t.location}
+                featured={t.id === "t1"}
+              />
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/testimonials"
+              className="inline-flex items-center gap-2 text-sm text-gold hover:text-navy transition-colors"
+            >
+              Read more stories
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CONSULTATION FORM SECTION */}
+      <section className="py-20 px-6 bg-beige" id="book">
+        <div className="max-w-2xl mx-auto">
+          <SectionHeading
+            eyebrow="Get Started"
+            title="Request your free conversation"
+            subtitle="Fill in a few details below and I'll be in touch within 24 hours."
+            centered
+          />
+          <div className="mt-10 bg-warm-white rounded-3xl p-8 md:p-10 border border-gold-light/40 shadow-sm">
+            <ConsultationForm />
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <CTASection
+        eyebrow="Ready When You Are"
+        title="Your clarity is closer than you think"
+        subtitle="It takes one conversation to begin. No pressure, no agenda — just a calm space to explore what's possible."
+        primaryLabel="Book a Free Call"
+        primaryHref="/contact"
+        secondaryLabel="Learn About Coaching"
+        secondaryHref="/coaching"
+      />
+    </>
   );
 }

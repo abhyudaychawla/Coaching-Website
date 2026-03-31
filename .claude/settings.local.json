@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(md|txt\\)$\")",
+      "Bash(npx tsc:*)",
+      "Bash(npm install:*)",
+      "Bash(npx prisma:*)",
+      "Bash(find c:/Users/abhyu/coaching-website/node_modules -path */prisma/dist/docs* -name *.md)",
+      "Bash(find c:/Users/abhyu/coaching-website/node_modules/prisma -name *.md)",
+      "Bash(find c:/Users/abhyu/coaching-website/node_modules/@prisma -name *.md)"
+    ]
+  }
+}
