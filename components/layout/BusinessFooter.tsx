@@ -3,17 +3,15 @@ import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/lib/content";
 
 const quickLinks = [
-  { href: "/clarity", label: "Home" },
-  { href: "/clarity/about", label: "About Anjali" },
-  { href: "/clarity/coaching", label: "Coaching Services" },
-  { href: "/clarity/process", label: "How It Works" },
-  { href: "/clarity/testimonials", label: "Client Stories" },
-  { href: "/clarity/contact", label: "Book a Conversation" },
+  { href: "/business", label: "Home" },
+  { href: "/business/about", label: "About Anjali" },
+  { href: "/business/services", label: "Business Services" },
+  { href: "/business/contact", label: "Book a Consultation" },
 ];
 
-export function Footer() {
+export function BusinessFooter() {
   return (
-    <footer className="bg-beige border-t border-gold-light/50">
+    <footer className="bg-moss border-t border-forest-light/50">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -21,18 +19,18 @@ export function Footer() {
             <span className="font-script text-4xl text-gold block mb-2">
               {siteConfig.coachName}
             </span>
-            <p className="text-[10px] tracking-[0.2em] text-navy/50 uppercase mb-4">
-              Change & Clarity Coaching
+            <p className="text-[10px] tracking-[0.2em] text-forest/50 uppercase mb-4">
+              Business Clarity Coaching
             </p>
-            <div className="section-divider mb-4" />
-            <p className="text-sm text-navy/65 leading-relaxed max-w-xs">
-              {siteConfig.tagline}
+            <div className="w-12 h-px bg-gold mb-4" />
+            <p className="text-sm text-forest/65 leading-relaxed max-w-xs">
+              Helping founders build organisations that run with clarity and profitability.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs tracking-[0.2em] uppercase text-navy/40 mb-6 font-sans">
+            <h4 className="text-xs tracking-[0.2em] uppercase text-forest/40 mb-6 font-sans">
               Navigate
             </h4>
             <ul className="space-y-3">
@@ -40,7 +38,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-navy/65 hover:text-gold transition-colors duration-200"
+                    className="text-sm text-forest/65 hover:text-sage transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -51,7 +49,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs tracking-[0.2em] uppercase text-navy/40 mb-6 font-sans">
+            <h4 className="text-xs tracking-[0.2em] uppercase text-forest/40 mb-6 font-sans">
               Get in Touch
             </h4>
             <ul className="space-y-4">
@@ -59,7 +57,7 @@ export function Footer() {
                 <Phone size={15} className="text-gold mt-0.5 shrink-0" />
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="text-sm text-navy/65 hover:text-gold transition-colors"
+                  className="text-sm text-forest/65 hover:text-sage transition-colors"
                 >
                   {siteConfig.phone}
                 </a>
@@ -70,7 +68,7 @@ export function Footer() {
                   href={siteConfig.socialLinks.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-navy/65 hover:text-gold transition-colors"
+                  className="text-sm text-forest/65 hover:text-sage transition-colors"
                 >
                   WhatsApp
                 </a>
@@ -79,43 +77,31 @@ export function Footer() {
                 <Mail size={15} className="text-gold mt-0.5 shrink-0" />
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-sm text-navy/65 hover:text-gold transition-colors"
+                  className="text-sm text-forest/65 hover:text-sage transition-colors"
                 >
                   {siteConfig.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={15} className="text-gold mt-0.5 shrink-0" />
-                <span className="text-sm text-navy/65">{siteConfig.location}</span>
+                <span className="text-sm text-forest/65">{siteConfig.location}</span>
               </li>
             </ul>
-
-            <div className="mt-6">
-              <a
-                href={siteConfig.socialLinks.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold/50 text-navy/70 text-sm rounded-full hover:bg-gold hover:text-warm-white hover:border-gold transition-all duration-200"
-              >
-                <MessageCircle size={15} />
-                WhatsApp Us
-              </a>
-            </div>
           </div>
         </div>
 
-        {/* Credentials strip */}
-        <div className="border-t border-gold-light/60 pt-8">
+        {/* Bottom bar */}
+        <div className="border-t border-forest-light/60 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <p className="text-xs text-navy/40 leading-relaxed">
+            <p className="text-xs text-forest/40 leading-relaxed">
               {siteConfig.credentials.join(" · ")}
             </p>
             <div className="flex items-center gap-6">
-              <Link href="/" className="text-xs text-navy/35 hover:text-gold transition-colors">
+              <Link href="/" className="text-xs text-forest/35 hover:text-gold transition-colors">
                 ← All Coaching
               </Link>
-              <p className="text-xs text-navy/35 whitespace-nowrap">
-                © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.
+              <p className="text-xs text-forest/35 whitespace-nowrap">
+                © {new Date().getFullYear()} {siteConfig.coachName}. All rights reserved.
               </p>
             </div>
           </div>

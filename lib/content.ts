@@ -162,6 +162,82 @@ export const processSteps = [
   },
 ];
 
+// ─── BUSINESS SUB-SITE CONTENT ────────────────────────────────────────────────
+
+export const businessConfig = {
+  tagline: "Helping founders simplify their business, strengthen leadership, and build organisations that run with clarity and profitability.",
+  subtitle: "Business Clarity & Performance Coaching",
+};
+
+export const businessPillars = [
+  {
+    id: "clarity",
+    title: "Clarity",
+    description: "Understanding the real state of the business — stepping back from daily operations to see what is truly driving results.",
+    icon: "Eye",
+  },
+  {
+    id: "structure",
+    title: "Structure",
+    description: "Defining roles, responsibilities, and decision flow so the business runs with less friction and more momentum.",
+    icon: "LayoutGrid",
+  },
+  {
+    id: "alignment",
+    title: "Alignment",
+    description: "Ensuring leadership and teams are working effectively together — people and priorities moving in the same direction.",
+    icon: "Target",
+  },
+  {
+    id: "momentum",
+    title: "Momentum",
+    description: "Focusing the business on actions that drive growth — translating clarity into focused, profitable execution.",
+    icon: "TrendingUp",
+  },
+];
+
+export const businessHowItWorks = [
+  {
+    title: "Clarity of Perspective",
+    description: "Stepping back from daily operations to understand what is truly driving the business.",
+  },
+  {
+    title: "Simplifying Complexity",
+    description: "Identifying where processes, communication, or responsibilities have become unnecessarily complicated.",
+  },
+  {
+    title: "Founder Decision Support",
+    description: "Working through important strategic decisions with a structured thinking partner.",
+  },
+  {
+    title: "Talent & Role Alignment",
+    description: "Ensuring the right people are in the right roles and leadership teams are functioning effectively.",
+  },
+  {
+    title: "Intergenerational Alignment",
+    description: "Helping family-run businesses navigate generational transitions while maintaining clarity and trust.",
+  },
+];
+
+export const businessStats = [
+  { number: "28%", label: "Higher success rate of strategic initiatives with clarity frameworks", source: "Forbes" },
+  { number: "400%", label: "More energy and motivation when executives are clear on strategic direction", source: "McKinsey & Co" },
+  { number: "25%", label: "Higher profitability and productivity in teams with clear roles and purpose", source: "McKinsey & Co" },
+];
+
+export const businessSituations = [
+  "Unclear decision-making and leadership gaps",
+  "Growth that has created more complexity than progress",
+  "Family business generational transitions",
+  "Team misalignment and communication breakdowns",
+  "Strategic decisions that feel stuck",
+  "Founder overwhelm and loss of clarity",
+  "Roles and responsibilities that have blurred over time",
+  "Culture and performance not moving together",
+];
+
+// ─── TESTIMONIALS ──────────────────────────────────────────────────────────────
+
 export const testimonials = [
   {
     id: "t1",

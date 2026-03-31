@@ -13,24 +13,21 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* HERO */}
       <section className="pt-32 pb-16 px-6 gradient-warm">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl">
             <p className="text-xs tracking-[0.3em] uppercase text-gold mb-6">Get in Touch</p>
             <h1 className="font-heading text-5xl md:text-6xl text-navy leading-tight mb-4">
-              The door is{" "}
-              <span className="italic">always open</span>
+              The door is <span className="italic">always open</span>
             </h1>
             <div className="section-divider mb-6" />
             <p className="text-base text-navy/65 leading-relaxed">
-              Whether you're ready to begin or simply curious about what coaching might offer — a conversation is the right first step. All enquiries are treated with complete confidentiality.
+              Whether you're ready to begin or simply curious — a conversation is the right first step. All enquiries are treated with complete confidentiality.
             </p>
           </div>
         </div>
       </section>
 
-      {/* TRUST SIGNALS */}
       <section className="py-8 px-6 bg-beige border-y border-gold-light/40">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap justify-center md:justify-between gap-6">
@@ -48,27 +45,18 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* MAIN CONTENT */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-            {/* Left: Contact info + direct contact */}
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <SectionHeading
-                  eyebrow="Direct Contact"
-                  title="Reach out directly"
-                />
+                <SectionHeading eyebrow="Direct Contact" title="Reach out directly" />
                 <p className="text-sm text-navy/65 leading-relaxed mt-4">
-                  Prefer to reach out directly? You're welcome to call, WhatsApp, or email. All channels lead to the same warm response.
+                  Prefer to reach out directly? You're welcome to call, WhatsApp, or email.
                 </p>
               </div>
-
               <div className="space-y-5">
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="flex items-center gap-4 p-5 bg-beige rounded-2xl border border-gold-light/40 hover:border-gold/40 transition-colors group"
-                >
+                <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-4 p-5 bg-beige rounded-2xl border border-gold-light/40 hover:border-gold/40 transition-colors group">
                   <div className="w-10 h-10 rounded-full bg-warm-white border border-gold-light flex items-center justify-center shrink-0">
                     <Phone size={16} className="text-gold" />
                   </div>
@@ -77,13 +65,7 @@ export default function ContactPage() {
                     <p className="text-sm text-navy font-medium group-hover:text-gold transition-colors">{siteConfig.phone}</p>
                   </div>
                 </a>
-
-                <a
-                  href={siteConfig.socialLinks.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-5 bg-beige rounded-2xl border border-gold-light/40 hover:border-gold/40 transition-colors group"
-                >
+                <a href={siteConfig.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-5 bg-beige rounded-2xl border border-gold-light/40 hover:border-gold/40 transition-colors group">
                   <div className="w-10 h-10 rounded-full bg-warm-white border border-gold-light flex items-center justify-center shrink-0">
                     <MessageCircle size={16} className="text-gold" />
                   </div>
@@ -92,11 +74,7 @@ export default function ContactPage() {
                     <p className="text-sm text-navy font-medium group-hover:text-gold transition-colors">Message on WhatsApp</p>
                   </div>
                 </a>
-
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-4 p-5 bg-beige rounded-2xl border border-gold-light/40 hover:border-gold/40 transition-colors group"
-                >
+                <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-4 p-5 bg-beige rounded-2xl border border-gold-light/40 hover:border-gold/40 transition-colors group">
                   <div className="w-10 h-10 rounded-full bg-warm-white border border-gold-light flex items-center justify-center shrink-0">
                     <Mail size={16} className="text-gold" />
                   </div>
@@ -105,7 +83,6 @@ export default function ContactPage() {
                     <p className="text-sm text-navy font-medium group-hover:text-gold transition-colors">{siteConfig.email}</p>
                   </div>
                 </a>
-
                 <div className="flex items-center gap-4 p-5 bg-beige rounded-2xl border border-gold-light/40">
                   <div className="w-10 h-10 rounded-full bg-warm-white border border-gold-light flex items-center justify-center shrink-0">
                     <MapPin size={16} className="text-gold" />
@@ -116,17 +93,14 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Reassurance text */}
               <div className="p-6 rounded-2xl bg-navy">
                 <p className="text-xs tracking-[0.15em] uppercase text-gold mb-3">Confidentiality Promise</p>
                 <p className="text-sm text-warm-white/75 leading-relaxed">
-                  Everything you share — in this form or in any conversation — remains completely private. This is a safe, judgment-free space.
+                  Everything you share remains completely private. This is a safe, judgment-free space.
                 </p>
               </div>
             </div>
 
-            {/* Right: Consultation request form */}
             <div className="lg:col-span-3">
               <SectionHeading
                 eyebrow="Free 15-Minute Call"
@@ -141,7 +115,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* GENERAL CONTACT FORM */}
       <section className="py-20 px-6 bg-beige">
         <div className="max-w-2xl mx-auto">
           <SectionHeading

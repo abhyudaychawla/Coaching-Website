@@ -7,15 +7,13 @@ import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/content";
 
 const navLinks = [
-  { href: "/clarity", label: "Home" },
-  { href: "/clarity/about", label: "About" },
-  { href: "/clarity/coaching", label: "Coaching" },
-  { href: "/clarity/process", label: "Process" },
-  { href: "/clarity/testimonials", label: "Testimonials" },
-  { href: "/clarity/contact", label: "Contact" },
+  { href: "/business", label: "Home" },
+  { href: "/business/about", label: "About" },
+  { href: "/business/services", label: "Services" },
+  { href: "/business/contact", label: "Contact" },
 ];
 
-export function Navbar() {
+export function BusinessNavbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -34,19 +32,19 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-warm-white/95 backdrop-blur-md shadow-sm border-b border-gold-light/40"
+          ? "bg-warm-white/95 backdrop-blur-md shadow-sm border-b border-forest-light/40"
           : "bg-warm-white/80 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-3">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none group">
+          <Link href="/business" className="flex flex-col leading-none group">
             <span className="font-script text-3xl text-gold leading-none tracking-wide">
               {siteConfig.coachName}
             </span>
-            <span className="text-[9px] tracking-[0.2em] text-navy/50 uppercase mt-0.5 font-sans">
-              Change & Clarity Coaching
+            <span className="text-[9px] tracking-[0.2em] text-forest/50 uppercase mt-0.5 font-sans">
+              Business Clarity Coaching
             </span>
           </Link>
 
@@ -56,18 +54,18 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm tracking-wide transition-colors duration-200 hover:text-gold ${
+                className={`text-sm tracking-wide transition-colors duration-200 hover:text-sage ${
                   pathname === link.href
-                    ? "text-navy font-medium"
-                    : "text-navy/65"
+                    ? "text-forest font-medium"
+                    : "text-forest/65"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="/clarity/contact"
-              className="ml-2 px-5 py-2.5 bg-navy text-warm-white text-sm rounded-full tracking-wide hover:bg-navy/85 transition-colors duration-200"
+              href="/business/contact"
+              className="ml-2 px-5 py-2.5 bg-forest text-warm-white text-sm rounded-full tracking-wide hover:bg-forest/85 transition-colors duration-200"
             >
               Book a Call
             </Link>
@@ -75,7 +73,7 @@ export function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-navy/70 hover:text-navy transition-colors"
+            className="lg:hidden p-2 text-forest/70 hover:text-forest transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -90,23 +88,26 @@ export function Navbar() {
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-warm-white border-t border-gold-light/40 px-6 py-6 flex flex-col gap-4">
+        <div className="bg-warm-white border-t border-forest-light/40 px-6 py-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-wide py-1 transition-colors hover:text-gold ${
-                pathname === link.href ? "text-navy font-medium" : "text-navy/65"
+              className={`text-sm tracking-wide py-1 transition-colors hover:text-sage ${
+                pathname === link.href ? "text-forest font-medium" : "text-forest/65"
               }`}
             >
               {link.label}
             </Link>
           ))}
           <Link
-            href="/clarity/contact"
-            className="mt-2 px-5 py-3 bg-navy text-warm-white text-sm rounded-full tracking-wide text-center hover:bg-navy/85 transition-colors"
+            href="/business/contact"
+            className="mt-2 px-5 py-3 bg-forest text-warm-white text-sm rounded-full tracking-wide text-center hover:bg-forest/85 transition-colors"
           >
             Book a Call
+          </Link>
+          <Link href="/" className="text-xs text-forest/40 hover:text-sage transition-colors text-center mt-1">
+            ← All Coaching
           </Link>
         </div>
       </div>
