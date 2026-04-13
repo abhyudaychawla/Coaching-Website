@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Neon__get_database_tables",
+      "Bash(npx tsx:*)"
+    ]
+  }
+}

@@ -84,12 +84,12 @@ export default function ProcessPage() {
             <div className="flex items-start gap-4">
               <Shield size={24} className="text-gold mt-1 shrink-0" />
               <div>
-                <h3 className="font-heading text-xl text-navy mb-3">A note about coaching and therapy</h3>
+                <h3 className="font-heading text-xl text-navy mb-3">A note about coaching and counselling</h3>
                 <p className="text-sm text-navy/65 leading-relaxed mb-3">
-                  Coaching is a powerful tool for people who are fundamentally well but seeking greater clarity, direction, or support through change. It is <strong>not</strong> a substitute for therapy.
+                  Coaching is a powerful tool for people who are fundamentally well but seeking greater clarity, direction, or support through change. It is <strong>not</strong> a substitute for counselling.
                 </p>
                 <p className="text-sm text-navy/65 leading-relaxed">
-                  If you are uncertain whether coaching or therapy is the right fit, Anjali is happy to discuss this openly in your first call.
+                  If you are uncertain whether coaching or counselling is the right fit, Anjali is happy to discuss this openly in your first call.
                 </p>
               </div>
             </div>

@@ -104,9 +104,9 @@ export const services = [
 
 export const faqs = [
   {
-    question: "How is coaching different from therapy?",
+    question: "How is coaching different from counselling?",
     answer:
-      "Coaching is focused on the present and future — it's action-oriented, goal-oriented, and works with people who are fundamentally well but want to navigate a situation or transition more effectively. Therapy typically explores the past and is appropriate for clinical mental health support. Anjali's coaching is not a substitute for therapy.",
+      "Coaching is focused on the present and future — it's action-oriented, goal-oriented, and works with people who are fundamentally well but want to navigate a situation or transition more effectively. Therapy typically explores the past and is appropriate for clinical mental health support. Anjali's coaching is not a substitute for counselling.",
   },
   {
     question: "What happens in the free 15-minute call?",

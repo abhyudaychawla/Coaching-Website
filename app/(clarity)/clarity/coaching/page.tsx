@@ -21,7 +21,7 @@ const forYouIf = [
 ];
 
 const notForYouIf = [
-  "You're looking for therapy or clinical mental health treatment",
+  "You're looking for counselling or clinical mental health treatment",
   "You want someone to make decisions for you",
   "You're in acute crisis and need immediate professional support",
   "You're unwilling to reflect or engage with honest self-examination",
@@ -110,7 +110,7 @@ export default function CoachingPage() {
               </ul>
               <div className="mt-8 p-5 rounded-2xl bg-warm-white border border-gold-light/40">
                 <p className="text-xs text-navy/60 leading-relaxed">
-                  <strong className="text-navy">Note:</strong> Coaching is not therapy. If you're dealing with clinical mental health conditions, please seek support from a licensed professional.
+                  <strong className="text-navy">Note:</strong> Coaching is not counselling. If you're dealing with clinical mental health conditions, please seek support from a licensed professional.
                 </p>
               </div>
             </div>
